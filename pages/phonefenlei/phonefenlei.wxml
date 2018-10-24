@@ -1,0 +1,20 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class='classlist' bindtap='jumpclassDetail'  wx:for="{{apiLimit}}" data-item="{{item.limitGoodsId}}" id="{{index}}" data-apiLimit="{{item.perTotal}}">
+    <view class='left'>
+      <image src='{{item.goodsDO.thumbnail}}'></image>
+    </view>
+    <view class='right'>
+      <view class='classtitile'>
+        {{item.goodsName}}
+      </view>
+      <view class='rightBottom'> 
+        <view class='price'> 
+          <text class='nowprice'>￥{{item.finalAmount}}</text>
+          <text class='oldprice'>￥{{item.goodsPrice}}</text>
+        </view>
+        <text class='buybtn'>立即抢购</text>
+      </view>
+    </view>
+  </view> 
+</view>

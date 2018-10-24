@@ -1,0 +1,18 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class='classlist' wx:for="{{Goods}}" :key="key" :index="index" data-goodId="{{item.goodsId}}">
+    <view class='left'  bindtap='jumpclassDetail'>
+      <image src='{{item.thumbnail}}'></image>
+    </view>
+    <view class='right'>
+      <view class='classtitile'  bindtap='jumpclassDetail'>
+        {{item.name}}
+      </view>
+      <view class='price'>￥{{item.price}}</view>
+      <view class='rightBottom'> 
+        <text class='haspay'>已有{{item.buyCount}}人购买</text>
+        <text class='buybtn' bindtap='jumpbuy' data-price="{{item.price}}" data-goodsId="{{item.goodsId}}"data-image="{{item.thumbnail}}">报名</text>
+      </view>
+    </view>
+  </view> 
+</view>

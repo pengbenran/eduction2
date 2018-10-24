@@ -1,0 +1,17 @@
+/* pages/guaguaka/guaguaka.wxss */
+.schoolLog{
+  width: 100%;
+}
+.schoolLog image{
+  width: 100%;
+  display: block;
+}
+.intro{
+  width: 95%;
+  margin: 0 auto;
+}
+.title{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}

@@ -1,0 +1,72 @@
+<import src="../../utils/switch/switch.wxml" />
+<view class="container">
+  <!--编辑  -->
+  <view class='shops'> 
+  <!-- 商品 -->
+  <view class='Spcart'wx:for="{{list}}">
+    <view class='box2'>
+      <image src='{{item.image}}'></image>
+    </view>
+    <view class='box6'>
+      <view class='character'>{{item.name}}</view>
+      <view class='numb-boot'>
+        <text>{{Goods.specvalue}}</text>
+      </view>
+    </view>
+    <view class='box5'> 
+      <view class='box5-text'>
+        <text class='box5-one'>￥{{item.price}}</text>
+        <text class='box5-two'>x{{item.num}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class='leave'>
+    <text class='language'>学生姓名：</text>
+    <input placeholder="点击填写学生姓名" placeholder-style="color:#8d8d8d;" bindinput='clickd' ></input>
+  </view>
+   <view class='leave'>
+    <text class='language'>家长电话：</text>
+    <input placeholder="点击填写家长电话" placeholder-style="color:#8d8d8d;" bindinput='clickd2' type='Number' ></input>
+  </view>
+   <view class='leave'>
+    <text class='language'>详细地址：</text>
+    <input placeholder="点击填写详细地址" placeholder-style="color:#8d8d8d;" bindinput='clickd3' ></input>
+  </view>
+ 
+  <view class='way'>
+    <text class='way-text1'>积分抵扣</text>
+    <view class='jifen'>
+      <view class="inte-rightimg" style='color:#DBAF50;font-size:30rpx;'>
+      可用{{point}}积分兑换{{point_price}}元
+      </view>
+      <view class='approve' bindtap='select' id="{{select}}">
+          <icon wx:if="{{select}}" type="success" color="red" id="{{select}}"  class="cart-pro-select" />
+          <icon wx:else type="circle" class="cart-pro-select" id="{{select}}" />
+      </view>
+    </view>
+  </view>
+  <view class='mode'>
+    <view class='mode-top'>
+      <text class='way-text1'>课程金额：</text>
+      <text class='way-text4'>￥{{goodsAmount}}</text>
+    </view>
+  </view>
+</view>
+  <!--底部  -->
+  <view class='footerbox'></view>
+  <view class='footers'>
+    <view class="cart-foot">
+      <view class="foot-cont">
+          <text class="cont-tone" >合计：{{orderAmount}}元</text>  
+          <!-- <block wx:if="{{pars==1}}">
+              <text style='color:red'>-{{facevalue}}</text>
+          </block>  -->
+      </view>
+      <view class="foot-right" bindtap="toast">
+        <text>{{tijiao}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

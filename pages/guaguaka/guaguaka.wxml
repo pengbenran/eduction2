@@ -1,0 +1,10 @@
+<!--pages/guaguaka/guaguaka.wxml-->
+<view>
+   <view class='schoolLog'>
+    <image src='{{indexdata.logo}}'></image>
+   </view>
+   <view class='title'>学校简介</view>
+   <view class='intro'>
+    {{indexdata.descs}}
+   </view>
+</view>

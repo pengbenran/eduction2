@@ -1,0 +1,271 @@
+/*头部导航*/
+.gun{
+  height: 553px;
+  display: block;
+}
+.cart-no-data {
+  padding:40rpx 0;
+color:#999;
+text-align:center;
+}
+.swiper-tab{
+  text-align: center;
+  white-space: nowrap;
+  background: #fff;
+  width: 100%;
+}
+.swiperlist{
+width: 25%;
+height: 80rpx;
+line-height: 80rpx;
+display: inline-block;
+}
+.active{
+  color:#3494ff;
+  border-bottom: 4rpx solid #3494ff;
+  font-weight: bold;
+
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.box1-bootomright{
+  font-size:14px;
+color:#919191;
+}
+.times{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+/* 全部css  */
+.complete{
+border-top: 1rpx solid #eee;
+}
+.complete-box1{
+padding: 10rpx;
+ background: #fff;
+ height: 100rpx;
+ display: flex;
+}
+.box1-left{
+ width:10%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+}
+.box1-left image{
+ width:40rpx;
+ height:35rpx;
+ margin-top: 10rpx;
+}
+
+.box1-right{
+  width: 90%;
+  height: 100%;
+}
+.box1-top{
+ display: flex;
+ justify-content: space-between;
+ height:45%;
+ align-items: center;
+}
+.toptext1{
+ font-size: 15px;
+}
+.toptext2{
+font-size: 14px;
+color: #3494ff;
+padding-right: 20rpx;
+}
+.shipped{
+  color: #5ca2fa;
+  font-size: 14px;
+  padding-right: 20rpx;
+}
+
+.box1-bootom{
+font-size: 14px;
+color: #919191;
+}
+.complete-box2{
+  /* height: 260rpx; */
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.box2-left{
+ width: 200rpx;
+ height: 200rpx;
+ background: #fff;
+}
+.box2-left image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.box2-conter{
+ width: 350rpx;
+ padding-left:20rpx;
+ box-sizing: border-box; 
+}
+.context1{
+ font-size: 14px;
+}
+.context2{
+  font-size: 14px;
+  color: #828282;
+}
+.box2-right{
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+}
+.rigtext1{
+  font-size: 15px;
+  color: #3494ff;
+}
+.rigtext2{
+ font-size: 14px;
+ color: #828282;
+}
+.rigtext3{
+ font-size: 14px;
+ color: #828282;
+}
+.complete-box3{
+   padding: 0 20rpx 0 20rpx;
+  display: flex;
+  justify-content:  flex-end;
+  align-items: center;
+background: #fff;
+ height: 80rpx;
+ border-bottom: 1rpx solid #eee;
+ }
+ /*字体  */
+ .tex01{
+    font-size: 14px;
+ }
+ .tex02{
+   font-size: 15px;
+   color: red;
+ }
+ .tex03{
+   font-size: 14px;
+   margin-left: 5rpx;
+ }
+ .win-text{
+ color: #b3b3b3;
+ font-size: 14px;
+ padding-right: 20rpx;
+ }
+ /*  */
+.complete-box4{
+   padding: 20rpx;
+ background: #fff;
+ height: 80rpx;
+ display: flex;
+align-items: center;
+justify-content:  flex-end;
+margin-bottom: 15rpx;
+}
+.com-input01{
+  border: 1px solid #b3b3b3;
+  height: 60rpx;
+  width: 140rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  font-size: 14px;
+  line-height: 60rpx;
+}
+.com-input02{
+  border: 1px solid #3494ff;
+  height: 60rpx;
+  width: 140rpx;
+  font-size: 14px;
+  color: #3494ff;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+/*待付款css  */
+
+
+/*待发货css  */
+
+
+/*待收货css  */
+
+/*已完成css  */
+
+
+/*取消订单模态框css  */
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+/*content*/  
+.drawer_box {  
+  width: 650rpx;
+   height:400rpx;   
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}  
+.cell-img{
+  width: 140rpx;
+  height: 140rpx;
+}
+.cell-btn{
+ display: flex;
+ width: 80%;
+ height: 100rpx;
+ justify-content: space-around;
+ align-items: center;
+}
+.cell-input1{
+  border: 1px solid #b3b3b3;
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  font-size: 14px;
+  color: #828282;
+  line-height:80rpx;
+}
+.cell-input2{
+  border: 1px solid #b3b3b3;
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  font-size: 14px;
+  background: #1b86f8;
+  color: #fff;
+  line-height:80rpx;
+}

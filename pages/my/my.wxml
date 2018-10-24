@@ -1,0 +1,95 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <!--头像 -->
+  <image class="head" src="{{head}}"></image>
+  <view class='bg'>
+    <block wx:if="{{hasmemberId&&isUse}}">
+     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> 
+    <view class="head-cont">
+        <view  bindtap="bindViewTap" class="userinfo">
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>  
+        </view> 
+      <view class="member" hidden="{{!isMember}}">{{lvidname}}</view>
+    </view>
+    <!-- <view class='jifenbtn' bindtap='jumprechge'>积分充值</view> -->
+     <!-- <image class="head-right" src="{{right}}"></image>  -->
+     </block>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击授权登录 </button>
+  </view>   
+  <!--列表区域  -->
+  <!-- 微分销 -->
+
+    <view class="integral int-top">
+    <view class="integral-left">
+      <image src="{{int}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right int-borde" bindtap='fahuo'>
+      <text>我的订单</text>
+      <view class="inte-rightimg">
+        <!-- <text class="clor-text" style='margin-right:10rpx;'>{{mp}}</text> -->
+         <image src="{{clor}}"></image> 
+      </view>
+    </view>
+  </view> 
+     <view class="integral" bindtap='openMember'>
+    <view class="integral-left">
+      <image src="{{weifenxiao}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right int-borde">
+      <text>微分销会员</text>
+        <view class="inte-rightimg">
+          <image src="{{inteping}}"></image>
+        </view>
+    </view>
+  </view>
+   <!-- 积分 -->
+   <view class="integral">
+    <view class="integral-left">
+      <image src="{{int}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right int-borde" bindtap='jifen'>
+      <text>积分</text>
+      <view class="inte-rightimg">
+        <text class="clor-text" style='margin-right:10rpx;'>{{mp}}</text>
+         <image src="{{clor}}"></image> 
+      </view>
+    </view>
+  </view> 
+  <!-- <view class="integral" bindtap='youhuijuan'>
+    <view class="integral-left">
+      <image src="{{youhui}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right .int-borde">
+      <text>优惠券</text>
+    <view class="inte-rightimg">
+      <image src="{{three}}"></image>
+    </view>
+    </view>
+  </view> -->
+  <!-- 我的拼团-->
+<view class="integral" bindtap='pingtuan'>
+    <view class="integral-left">
+      <image src="{{myping}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right int-borde">
+      <text>团购</text>
+        <view class="inte-rightimg">
+          <image src="{{inteping}}"></image>
+        </view>
+    </view>
+  </view>
+  <view class="integral" bindtap='xianshi'>
+    <view class="integral-left">
+      <image src="{{limittime}}" class="integral-image"></image>
+    </view>
+    <view class="integral-right int-borde">
+      <text>限时折扣</text>
+        <view class="inte-rightimg">
+          <image src="{{inteping}}"></image>
+        </view>
+    </view>
+  </view>
+  <view class="log">
+    <image src="https://shop.guqinet.com/html/images/pos/logo.png" alt=""/>
+  </view>
+</view>

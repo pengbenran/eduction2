@@ -1,0 +1,69 @@
+<import src="../../utils/switch/switch.wxml" />
+<view class="container">
+  <!--编辑  -->
+  <view class='shops'>
+  <!-- 商品 -->
+  <view class='Spcart'>
+    <view class='box2'>
+      <image src='{{Goods.thumbnail}}'></image>
+    </view>
+    <view class='box6'>
+      <view class='character'>{{Goods.name}}</view>
+      <view class='numb-boot'>
+        <text>{{Goods.specvalue}}</text>
+      </view>
+    </view>
+    <view class='box5'> 
+      <view class='box5-text'>
+        <text class='box5-one'>￥{{price}}</text>
+        <text class='box5-two'>x{{pic}}</text>
+      </view>
+    </view>
+
+  </view>
+   <view class='leave'>
+    <text class='language'>学生姓名：</text>
+    <input placeholder="点击填写学生姓名" placeholder-style="color:#8d8d8d;" bindinput='clickd' ></input>
+  </view>
+   <view class='leave'>
+    <text class='language'>家长电话：</text>
+    <input placeholder="点击填写家长电话" placeholder-style="color:#8d8d8d;" bindinput='clickd2' type='Number' ></input>
+  </view>
+   <view class='leave'>
+    <text class='language'>详细地址：</text>
+    <input placeholder="点击填写详细地址" placeholder-style="color:#8d8d8d;" bindinput='clickd3' ></input>
+  </view>
+  <view class='mode'>
+    <view class='mode-top'>
+      <text class='way-text1'>商品金额：</text>
+      <text class='way-text4'>￥{{totalPrice}}</text>
+    </view>
+    <!-- <view class='mode-botom'>
+      <text class='way-text1'>运费：</text>
+      <text class='way-text4'>￥{{Goods.shippingAmount}}</text>
+    </view> -->
+  </view>
+</view>
+  <!--底部  -->
+  <view class='footerbox'></view>
+  <view class='footers'>
+    <view class="cart-foot">
+      <view class="foot-cont">
+        <text class="cont-tone" >合计：{{totalPrice}}元</text>
+      </view>
+      <view class="foot-right" bindtap="kaituan" wx:if="{{Type=='K'}}">
+        <text>立即开团</text>
+      </view>
+      <view class="foot-right" bindtap="cantuan" wx:if="{{Type=='C'}}">
+        <text>立即参团</text>
+      </view>
+      <view class="foot-right" bindtap="xianshi" wx:if="{{Type=='Z'}}">
+        <text>限时参加</text>
+      </view>
+      <view class="foot-right" bindtap="kanjia" wx:if="{{Type=='KJ'}}">
+        <text>提交订单</text>
+      </view>
+    </view>
+  </view>
+
+</view>

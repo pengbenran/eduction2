@@ -1,0 +1,120 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索  -->
+  <!-- <official-account>我问问</official-account> -->
+  <view class='searchTop' bindtap='sousuo'>
+    <view class="m-searchTop">
+      <view class="icon-search"></view>
+      <view class="input">搜索商品</view>
+    </view>
+  </view>
+  <!-- <view><image src="{{userImageBase64}}"></image></view> -->
+  <!-- 搜索底、公告 -->
+  <!-- <view class='Announcement' bindtap='gao'> -->
+    <!-- 喇叭img -->
+    <!-- <image src='{{data.Announimg}}' class='Img'></image> -->
+    <!-- <image src='{{labaimg}}' class='Img'></image> -->
+    <!-- 公告 -->
+    <!-- <view class="example">
+      <view class="marquee_box">
+            <swiper duration='1000' autoplay='true' interval='3000' vertical='true'>
+                <swiper-item wx:for="{{indexNotice}}" >
+                    <div class='content'>{{item.content}}</div>
+                </swiper-item>
+              </swiper>
+      </view>
+    </view> -->
+    <!-- <view class='Announ-text'>
+      <text>{{data.indexNotice.content}}</text>
+    </view> -->
+  <!-- </view> -->
+  <view class='Rotation'>
+    <swiper class="swiper_box" indicator-color='gray' indicator-active-color='#fff' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="5000" duration="{{duration}}" bindtap="swiperbind">
+      <view wx:for="{{data.imgurl}}">
+        <swiper-item>
+          <image src="{{item.imageUrl}}" />
+        </swiper-item>
+      </view>
+    </swiper>
+  </view>
+  <!-- 菜单选项-->
+  <!-- <view class='menu'>
+    <view class='df nav'>
+      <view class='df_1' bindtap='phonefenlei' wx:for="{{menus}}" id='{{item.catId}}' data-item="{{item.name}}">
+        <image src='{{item.image}}'></image>
+        {{item.name}}
+      </view>
+    </view>
+  </view> -->
+  <!-- 拼团 --> 
+
+  <view class='title' wx:if="{{pingtuanList.length!=0}}">
+    <image src='/image/jiaochen.png'></image>
+  </view>
+  <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='true' muted="{{isAuto}}"></video>
+ <view class='title' wx:if="{{pingtuanList.length!=0}}">
+    <image src='/image/xuexiao.jpg'></image>
+  </view>
+  <view class='schoolLogo' bindtap='schooldetail'>
+    <image src='{{message.logo}}'></image>
+  </view>
+
+
+
+  <view class='title' wx:if="{{pingtuanList.length!=0}}">
+    <image src='/image/pingtuan.png'></image>
+  </view>
+  <!-- 横向滚动 -->
+  <scroll-view scroll-x='true' class="sc">
+    <view class="one" wx:for="{{pingtuanList}}" bindtap='jumptuan' data-item="{{item}}">
+      <view class='activeImg'>
+        <image src="{{item.thumbnail}}"></image>
+      </view>
+      <view class='className'>{{item.goodsName}}</view>
+      <view>
+        <text class='needperson'>{{item.collagePersons}}人团</text> <text class='activeprice'>￥{{item.activityPrice}}</text>
+      </view>
+      
+      <view class='oldprice'>￥{{item.goodsPrice}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 限时折扣 -->
+  <view class='title' wx:if="{{apiLimit.length!=0}}">
+    <image src='/image/xianshi.png'></image>
+  </view>
+  <!-- 横向滚动 -->
+  <scroll-view scroll-x='true' class="sc">
+    <view class="one" wx:for="{{apiLimit}}" bindtap='jumplimit'  data-item="{{item.limitGoodsId}}" id="{{index}}" data-apiLimit="{{item.perTotal}}">
+      <view class='activeImg'>
+       <image src="{{item.goodsDO.thumbnail}}"></image>
+      </view>
+      <view class='className'>{{item.goodsName}}</view>
+      <view class='activeprice'>￥{{item.finalAmount}}</view>
+      <view class='oldprice'>￥{{item.goodsPrice}}</view>   
+    </view>
+  </scroll-view>
+  <!-- 商品分类 -->
+
+
+<block wx:if="{{i.length!=0}}">
+  <view class='title'>
+    <image src='/image/kechen.png'></image>
+  </view>
+    <view class='commoditys'>
+        <view class='commodity' bindtap='jumpclassDetail' data-goodId="{{item.goodsId}}" wx:for="{{menus}}">
+          <view class='cod-1'>
+              <image class='codImg' src='{{item.thumbnail}}'></image>
+              <view class='box'>
+                      <text class='copy'>{{item.name}}</text>
+                      <view class='jia'>
+                        <text class='money'>￥{{item.price}}</text> 
+                        <!-- <image src='{{jiahao}}' style='height:50rpx;width:50rpx;float:right'></image>                        -->
+                      </view>  
+              </view>
+          </view>
+        </view>
+    </view>
+    <!-- 了解更多 -->
+  </block>
+</view>

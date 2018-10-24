@@ -1,0 +1,20 @@
+<!--pages/active/active.wxml-->
+<view class="container">
+  <scroll-view class="swiper-tab" scroll-x='true'>   
+    <view wx:for="{{tabitem}}" class="swiperlist {{item.isSelect==true ? 'active' : ''}}" bindtap='change' data-index="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <view class='studentConent'>
+    <view class='studentlist' wx:for="{{students}}" :key="key" :index="index">
+      <view class='studentImg'>
+        <image src='{{item.studentimg}}'></image>
+      </view>
+      <view>{{item.name}}</view>
+      <view class='buyclass'>{{item.buyclass}}</view>
+    </view>
+    <view wx:if="{{students.length==0}}" class="cart-no-data">
+      暂无学生风采哦！~~
+    </view>
+  </view>
+</view>
