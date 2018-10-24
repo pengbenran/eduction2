@@ -5,7 +5,7 @@
   <view class='searchTop' bindtap='sousuo'>
     <view class="m-searchTop">
       <view class="icon-search"></view>
-      <view class="input">搜索商品</view>
+      <view class="input">搜索课程</view>
     </view>
   </view>
   <!-- <view><image src="{{userImageBase64}}"></image></view> -->

@@ -31,7 +31,7 @@
     "pages/dingdan2/dingdan2",
     "pages/tuihuo/tuihuo",
     "pages/dist/dist",
-    
+    "pages/jiazhang/jiazhang",
     "pages/bigwheel/bigwheel",
     "pages/guaguaka/guaguaka",
     "pages/huiyuan/huiyuan",
@@ -104,6 +104,12 @@
         "pagePath": "pages/active/active",
         "text": "学生风采"
       },
+        {
+          "selectedIconPath": "/image/fenga.png",
+          "iconPath": "/image/feng.png",
+          "pagePath": "pages/jiazhang/jiazhang",
+          "text": "亲子活动"
+        },
       {
          "selectedIconPath": "/image/wode01.png",
          "iconPath": "/image/wode.png",

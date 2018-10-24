@@ -1,0 +1,8 @@
+<view class='imgwapr'>
+  <view class='itemwarp title'>
+  <view wx:if="{{imgList[0]}}">
+        <view class='item'  wx:for="{{imgList}}"><image src='{{item.logo}}' bindtap='previewImage' data-url='{{item.logo}}'></image></view>
+  </view>
+        <view wx:else>~~网络错误</view>
+  </view>
+</view>

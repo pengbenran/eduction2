@@ -57,3 +57,10 @@ width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.formwarp{background: #fff;width: 100%;}
+.foromr{display: flex;align-items: center;width: 85%;margin: 0 auto;background: rgb(228, 228, 228);padding: 5rpx 15rpx;}
+
+.formwarp{display: flex;justify-content: content;}
+.formwarp text{width: 15%;font-size: 32rpx;display: inline-block;background:#3494ff;color: #FFF;text-align: center;
+line-height:84rpx; }
