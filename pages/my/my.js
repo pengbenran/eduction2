@@ -1,6 +1,7 @@
 var apimg = getApp().globalData.apimg;
 var api = getApp().globalData.api;
 var apis = getApp().globalData.apis;
+const request = require('../../utils/request.js')
 // pages/my/my.js
 var util = require('../../utils/util.js');
 var app = getApp()
@@ -34,7 +35,9 @@ Page({
     limittime:"/image/my5.png",
     motto: 'Hello World',
     userInfo: {},
-    isMember:true
+    isMember:true,
+    isShowModel:true,
+    mobile:''
   },
   onShareAppMessage: function () {
     withShareTicket: true
@@ -80,6 +83,92 @@ Page({
   },
   onLoad: function () {
 
+  },
+  getPhoneNumber:function(e){ 
+      var that=this
+      that.setData({
+        isShowModel: true 
+      })
+      if (e.detail.errMsg == "getPhoneNumber:ok") {
+        wx.login({
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            let code=res.code
+            if (res.code) {
+              let url = '/api/weCatGetTel';
+              let data = {};
+              data.code = res.code
+              data.encryptedData = e.detail.encryptedData
+              data.iv = e.detail.iv
+              request.moregets(url, data).then(function (res) {
+                if (res.code == 0) {
+                  var mobile = res.mobile
+                    wx.login({
+                      success: res => {
+                        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                        if (res.code) {
+                        let code= res.code
+                        wx.getUserInfo({
+                          success: function (res_user) {
+                            wx.setStorageSync('name', res_user.userInfo.nickName)
+                            wx.setStorageSync('face', res_user.userInfo.avatarUrl)
+                            wx.request({
+                              url: api + '/api/weCatLogin',
+                              data: {
+                                mobile: mobile,
+                                code: code,//获取openid的话 需要向后台传递code,利用code请求api获取openid
+                                headurl: res_user.userInfo.avatarUrl,//这些是用户的图片信息
+                                nickname: res_user.userInfo.nickName,//获取昵称
+                                sex: res_user.userInfo.gender,//获取性别
+                                country: res_user.userInfo.country,//获取国家
+                                province: res_user.userInfo.province,//获取省份
+                                city: res_user.userInfo.city//获取城市
+                              },
+                              success: function (res) {
+                                console.log(res.data)
+                                that.setData({
+                                  hasmemberId: true,
+                                })
+                                
+                                wx.setStorageSync("openId", res.data.openid)//可以把openid保存起来,以便后期需求的使用
+                                wx.setStorageSync("memberId", res.data.memberId)
+                                wx.setStorageSync("memberIdlvId", res.data.memberIdlvId)
+                                if (wx.getStorageSync('distribeId') == null) {
+                                  that.onShow();
+                                }
+                                else {
+                                  wx.request({
+                                    url: api + '/api/distribe/promotion',
+                                    data: {
+                                      distribeId: wx.getStorageSync('distribeId'),
+                                      memberId: res.data.memberId
+                                    },
+                                    method: "POST",
+                                    header: {
+                                      'Content-Type': 'application/x-www-form-urlencoded'
+                                    },
+                                    success: function (res) {
+                                      that.onShow();
+                                      console.log(res)
+                                    }
+                                  })
+                                }
+                              }
+
+                            })
+
+                          }
+
+                        })
+                      }
+                      }
+                    })
+                }
+              })
+            }
+          }
+        })
+      }
   },
   xianshi:function(){
     wx.navigateTo({
@@ -147,58 +236,11 @@ Page({
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          console.log("res",res)
           if (res.code) {
-            wx.getUserInfo({
-              success: function (res_user) {
-                wx.setStorageSync('name', res_user.userInfo.nickName)
-                wx.setStorageSync('face', res_user.userInfo.avatarUrl)
-                wx.request({
-                  url: api + '/api/weCatLogin',
-                  data: {
-                    code: res.code,//获取openid的话 需要向后台传递code,利用code请求api获取openid
-                    headurl: res_user.userInfo.avatarUrl,//这些是用户的图片信息
-                    nickname: res_user.userInfo.nickName,//获取昵称
-                    sex: res_user.userInfo.gender,//获取性别
-                    country: res_user.userInfo.country,//获取国家
-                    province: res_user.userInfo.province,//获取省份
-                    city: res_user.userInfo.city//获取城市
-                  },
-                  success: function (res) {
-                    console.log(res.data)
-                    that.setData({
-                      hasmemberId: true
-                    })
-                    wx.setStorageSync("openId", res.data.openid)//可以把openid保存起来,以便后期需求的使用
-                    wx.setStorageSync("memberId", res.data.memberId)
-                    wx.setStorageSync("memberIdlvId", res.data.memberIdlvId)
-                    if (wx.getStorageSync('distribeId')==null){
-                      that.onShow();
-                    }
-                    else{
-                      wx.request({
-                        url: api + '/api/distribe/promotion',
-                        data: {
-                          distribeId: wx.getStorageSync('distribeId'),
-                          memberId: res.data.memberId
-                        },
-                        method: "POST",
-                        header: {
-                          'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        success: function (res) {
-                          that.onShow();
-                          console.log(res)
-                        }
-                      })
-                    }
-                  }
-
-                })
-
-              }
-
-            })
-
+            that.setData({
+              isShowModel:false
+            })       
           }
         }
       });

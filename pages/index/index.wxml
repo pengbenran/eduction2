@@ -53,7 +53,7 @@
   </view>
   <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='true' muted="{{isAuto}}"></video>
  <view class='title' wx:if="{{pingtuanList.length!=0}}">
-    <image src='/image/xuexiao.jpg'></image>
+    <image src='/image/xuexiao.png'></image>
   </view>
   <view class='schoolLogo' bindtap='schooldetail'>
     <image src='{{message.logo}}'></image>

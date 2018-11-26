@@ -1,6 +1,14 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/shangfeilei/shangfeilei",
+    "pages/my/my",
+    "pages/active/active",
+    "pages/jiazhang/jiazhang",
+    "pages/guaguaka/guaguaka",
+    "pages/group/group",
+
+
     "pages/join/join",
     "pages/phonefenlei/phonefenlei",
     "pages/morepoint/morepoint",
@@ -15,7 +23,7 @@
     "pages/membership/membership",
     "pages/membershipdetail/membershipdetail",  
     "pages/bargain/bargain",
-    "pages/my/my",
+   
     "pages/mycard/mycard",
     "pages/cardfrom/cardfrom",
     "pages/cardlike/cardlike",
@@ -27,13 +35,13 @@
     "pages/voucher/voucher",
     "pages/dingdan/dingdan",
     "pages/pay/pay",
-    "pages/group/group",
+    
     "pages/dingdan2/dingdan2",
     "pages/tuihuo/tuihuo",
     "pages/dist/dist",
-    "pages/jiazhang/jiazhang",
+
     "pages/bigwheel/bigwheel",
-    "pages/guaguaka/guaguaka",
+    
     "pages/huiyuan/huiyuan",
     "pages/myaddresstwo/myaddresstwo",
     "pages/xinzengdizhitwo/xinzengdizhitwo",
@@ -51,11 +59,11 @@
     "pages/shopingcart/shopingcart",
     "pages/spingpai/spingpai",
     "pages/xinzengdizhi/xinzengdizhi",
-    "pages/active/active",
+   
     "pages/bianjidizhi/bianjidizhi",
     "pages/bianjidizhitwo/bianjidizhitwo",
     "pages/sousuo/sousuo",
-    "pages/shangfeilei/shangfeilei",
+    
     "pages/quzhifu/quzhifu",
     "pages/mypingtuan/mypingtuan",
     "pages/mykanjia/mykanjia",

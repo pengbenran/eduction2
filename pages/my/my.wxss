@@ -253,3 +253,48 @@ height:28rpx;
   height: 100%;
   display: block;
 }
+.mode{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  
+}
+.bcg{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.loginmodel{
+  border-radius:10rpx; 
+  width: 60%;
+  height: 260rpx;
+  background: #fff;
+  position: absolute;
+  top: 500rpx;
+  left: 20%;
+}
+.title{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.tip{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  text-indent: 20px;
+  color: #8a8a8a;
+  height: 100rpx;
+}
+.btn{
+  border: none;
+  outline: 0;
+  text-align: right;
+  background: #fff;
+  color: #3494ff
+}
+button::after {
+  border: none;
+}

@@ -1,4 +1,5 @@
-/* pages/guaguaka/guaguaka.wxss */
+/* pages/guaguaka/guaguaka.wxss */ 
+@import"../../wxParse/wxParse.wxss";
 .schoolLog{
   width: 100%;
 }

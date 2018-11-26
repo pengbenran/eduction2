@@ -1,10 +1,11 @@
 <!--pages/guaguaka/guaguaka.wxml-->
+<import src="../../wxParse/wxParse.wxml" /> 
 <view>
    <view class='schoolLog'>
     <image src='{{indexdata.logo}}'></image>
    </view>
    <view class='title'>学校简介</view>
    <view class='intro'>
-    {{indexdata.descs}}
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
    </view>
 </view>

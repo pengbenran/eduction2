@@ -25,6 +25,10 @@
     <text class='language'>学生姓名：</text>
     <input placeholder="点击填写学生姓名" placeholder-style="color:#8d8d8d;" bindinput='clickd' ></input>
   </view>
+  <view class='leave'>
+    <text class='language'>家长姓名：</text>
+    <input placeholder="点击填写家长姓名" placeholder-style="color:#8d8d8d;" bindinput='clickd1' ></input>
+  </view>
    <view class='leave'>
     <text class='language'>家长电话：</text>
     <input placeholder="点击填写家长电话" placeholder-style="color:#8d8d8d;" bindinput='clickd2' type='Number' ></input>

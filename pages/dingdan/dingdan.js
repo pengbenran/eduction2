@@ -258,6 +258,11 @@ Page({
       stuName: e.detail.value
     })
   }, 
+  clickd1: function (e) {
+    this.setData({
+      parentName: e.detail.value
+    })
+  }, 
   clickd2: function (e) {
     this.setData({
       perentNum: e.detail.value
@@ -279,6 +284,12 @@ Page({
     else if (that.data.stuName == '') {
       wx.showToast({
         title: '学生姓名不能为空',
+        icon: 'none'
+      })
+    }
+    else if (that.data.parentName==""){
+      wx.showToast({
+        title: '家长姓名不能为空',
         icon: 'none'
       })
     }
@@ -314,6 +325,7 @@ Page({
         bean.point = that.data.point
         bean.gainedpoint = that.data.list[0].point
         bean.shipName = that.data.stuName
+        bean.parentName = that.data.parentName
         bean.shipMobile = that.data.perentNum
         bean.address = that.data.addr
         bean = JSON.stringify(bean)
@@ -504,6 +516,7 @@ Page({
         bean.goodsAmount = that.data.goodsAmount
         bean.shippingAmount = 0
         bean.googitem = that.data.list
+        // bean.parentName = tha.data.parentName
         bean = JSON.stringify(bean)
         wx.request({
           url: api + '/api/order/save',

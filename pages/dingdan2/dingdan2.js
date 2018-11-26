@@ -191,11 +191,7 @@ Page({
     })
   },
 
-  clickd: function (e) {
-    this.setData({
-      clickd: e.detail.value
-    })
-  },
+
   xianshi:function(){
     var that = this
     if (that.data.addr == '') {
@@ -207,6 +203,12 @@ Page({
     else if (that.data.stuName == '') {
       wx.showToast({
         title: '学生姓名不能为空',
+        icon: 'none'
+      })
+    }
+    else if (that.data.parentName == "") {
+      wx.showToast({
+        title: '家长姓名不能为空',
         icon: 'none'
       })
     }
@@ -228,6 +230,7 @@ Page({
       bean.memberId = that.data.memberId
       bean.gainedpoint = that.data.Goods.point
       bean.shipName = that.data.stuName
+      bean.parentName = that.data.parentName
       bean.shipMobile = that.data.perentNum
       bean.address = that.data.addr
       bean = JSON.stringify(bean)
@@ -356,6 +359,12 @@ Page({
         icon: 'none'
       })
     }
+    else if (that.data.parentName == "") {
+      wx.showToast({
+        title: '家长姓名不能为空',
+        icon: 'none'
+      })
+    }
     else if (that.data.perentNum == '') {
       wx.showToast({
         title: '家长电话不能为空',
@@ -391,6 +400,7 @@ Page({
               bean.point = 0
               bean.gainedpoint = 0
               bean.shipName = that.data.stuName
+              bean.parentName = that.data.parentName
               bean.shipMobile = that.data.perentNum
               bean.address = that.data.addr
               bean = JSON.stringify(bean)
@@ -552,6 +562,12 @@ Page({
         icon: 'none'
       })
     }
+    else if (that.data.parentName==""){
+      wx.showToast({
+        title: '家长姓名不能为空',
+        icon:'none'
+      })
+    }
     else if (that.data.perentNum == '') {
       wx.showToast({
         title: '家长电话不能为空',
@@ -568,6 +584,7 @@ Page({
       bean.memberId = that.data.memberId
       bean.gainedpoint = 0
       bean.shipName = that.data.stuName
+      bean.parentName = that.data.parentName
       bean.shipMobile = that.data.perentNum
       bean.address = that.data.addr
       bean.orderAmount = that.data.totalPrice
@@ -755,6 +772,11 @@ Page({
   clickd: function (e) {
     this.setData({
       stuName: e.detail.value
+    })
+  },
+  clickd1: function (e) {
+    this.setData({
+      parentName: e.detail.value
     })
   },
   clickd2: function (e) {
