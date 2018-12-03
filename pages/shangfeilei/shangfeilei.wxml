@@ -1,15 +1,16 @@
 <view class="container"> 
    <view class='left'>
-      <view class='leftlist'  bindtap='ClicktapName'  wx:for="{{array}}" wx:key="key" data-catid="{{item.catId}}" data-index='{{index}}' style='background:{{item.bgColor}}'>
-         <text class='txt' style="color:{{item.viewColor}};">{{item.name}}</text>       
+      <view class='leftlist'  bindtap='ClicktapName'  wx:for="{{Catlist}}" wx:key="key" data-catid="{{item.catId}}" data-index='{{index}}' style='background:{{item.bgColor}}'>
+         <text class="txt {{item.catId==selectIndex?'active' : ''}}" style="color:{{item.viewColor}};">{{item.name}}</text>       
       </view>   
    </view>
    <view class='right'>
-      <view>
-         <view class='rightlist'bindtap='ClicktapName' wx:for="{{array1}}" wx:key="key">
-            <image src='{{item.thumbnail}}' catchtap="chooseImageTap" data-index="{{index}}"style=' border-radius: 8%; '></image>
-            <text style='font-size:32rpx;'>{{item.name}}</text>
-         </view>    
+         <view class='rightlist' wx:if="{{ShopList.length != 0}}" >
+            <view class='ListWarp'  wx:for="{{ShopList}}" wx:key="key"  bindtap='Topage' data-goodsid='{{item.goodsId}}'>
+              <image src='{{item.thumbnail}}' style=' border-radius: 8%; '></image>
+              <text style='font-size:32rpx;' class='fontHidden1'> {{item.name}}</text>
+            </view> 
       </view>   
+         <view class='KongInfo' wx:if="{{ShopList.length == 0}}">你的数据被大风刮走了~~~~</view>
    </view>    
 </view>

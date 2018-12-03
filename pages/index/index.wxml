@@ -118,10 +118,10 @@
         <view class='title'>
             <image src='/image/shipin.png'></image>
         </view> 
-         <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='false' muted="{             {isAuto}}">
+        <view class='videoWarp' wx:for="{{indexmv}}">
+           <video src="{{item.imageUrl}}" style='width:100%' autoplay='{{tovideo}}' muted="{{isAuto}}">
          </video>
-          <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='false' muted="{             {isAuto}}">
-         </video>
+        </view> 
 
     <!-- 了解更多 -->
   </block>

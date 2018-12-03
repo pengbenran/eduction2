@@ -2,65 +2,17 @@ page{
   background-color: #f8f7fc;
 }
 
-/* .swiper-tab{
-  text-align: center;
-  white-space: nowrap;
-  background: #fff;
-  width: 100%;
-}
-.swiperlist{
-width: 25%;
-height: 80rpx;
-line-height: 80rpx;
-display: inline-block;
-}
-.active{
-  color:#3494ff;
-  border-bottom: 4rpx solid #3494ff;
-  font-weight: bold;
-
-}
-::-webkit-scrollbar{
-width: 0;
-height: 0;
-color: transparent;
-}
-.studentConent{
-  display: flex;
-  flex-wrap: wrap;
-}
-.studentImg{
-  width: 300rpx;
-  height: 300rpx;
-  overflow: hidden;
-}
-image{
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.studentlist{
-  background: #fff;
-  text-align: center;
-  padding: 20rpx;
-  box-sizing: border-box;
-  width: 45%;
-  margin-left: 20rpx;
-  margin-bottom: 20rpx;
-}
- */
 
 .container{
   display: flex;
   flex-direction:column;
 }
 .left{ 
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   background: #fff;
 }
 .leftlist{
   display: flex;
-  justify-content: space-around;
   padding: 30rpx 0;
   border-bottom: 2rpx #ccc solid;
 }
@@ -88,34 +40,4 @@ image{
    background-color: #3494ff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .buyclass{
-  width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.formwarp{background: #fff;width: 100%;}
-.foromr{display: flex;align-items: center;width: 85%;margin: 0 auto;background: rgb(228, 228, 228);padding: 5rpx 15rpx;}
-
-.formwarp{display: flex;justify-content: content;}
-.formwarp text{width: 15%;font-size: 32rpx;display: inline-block;background:#3494ff;color: #FFF;text-align: center;
-line-height:84rpx; } */
+.picker{font-weight: 100;font-size: 30rpx;}

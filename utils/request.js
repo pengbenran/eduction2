@@ -25,6 +25,31 @@ const  post=(url,data)=>{
   })
 }
 
+//封装一个POST请求
+const MorePost = (url, data) => {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: api + url,
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      data,
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data)
+          console.log(res.data.data)
+        } else {
+          reject(res.data)
+          console.log('请求失败')
+        }
+      },
+    });
+  })
+}
+
+
+
 //封装一个get请求
 const gets = (url, data) => {
   return new Promise((resolve, reject) => {
@@ -40,7 +65,6 @@ const gets = (url, data) => {
       success: res => {
         if (res.data.code == 0) {
           resolve(res.data)
-          console.log(res.data.data)
         } else {
           reject(res.data)
           console.log('请求失败')
@@ -111,6 +135,7 @@ module.exports = {
   post,
   gets,
   moregets,
+  MorePost,
   showSuccess,
   showModels
 }

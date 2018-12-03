@@ -3,9 +3,10 @@ var api = getApp().globalData.api;
 const request = require('../../utils/request.js')
 Page({
   data: {   
-    array:[],  
-    array1:[],
+    Catlist:[],  
+    ShopList:[],
     GoodLists:[ ],
+    selectIndex:81
     },
   // 刷新
   onShareAppMessage: function (){
@@ -23,19 +24,18 @@ Page({
       })
       that.setData({
         GoodLists: res.Goods,
-        array: res.GoodCatAll,
-        array1: arr
+        Catlist: res.GoodCatAll,
+        ShopList: arr
       })
     })
   },
   
+
+  //点击分类
   ClicktapName(e){
    let that = this;
    let arr = []
-    let cartid = e.currentTarget.dataset.catid
-    // arr =  that.data.GoodLists.filter(f=>{
-    //   f.catId == 81
-    // })
+   let cartid = e.currentTarget.dataset.catid
     that.data.GoodLists.map(v=>{
       if (v.catId == cartid){
         arr.push(v)
@@ -43,10 +43,17 @@ Page({
     })
     console.log(cartid, arr)
     that.setData({
-      array1: arr,
+      ShopList: arr,
+      selectIndex: cartid
     })
   },
-  chooseImageTap:function(){
 
+  //跳转
+  Topage(e){
+    let that = this;
+    let goodsid = e.currentTarget.dataset.goodsid
+    wx.navigateTo({ url: '../group/group?goodid=' + goodsid + '&catid=2' });
   }
+  
+
 }) 

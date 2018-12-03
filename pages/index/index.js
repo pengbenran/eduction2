@@ -26,6 +26,7 @@ Page({
     autoplay: true,     //自动切换
     duration: 1000,    //滑动动画时长
     sModalStatus:false,
+    tovideo:false,
     imgUrls: [],
     extension:'',
     faceValue:'',
@@ -123,7 +124,7 @@ Page({
         brand: res.data.brand,
         data: res.data,
         message: res.data.message,
-        indexmv:res.data.indexmv[0]
+        indexmv:res.data.indexmv
       })
 
       wx.setStorageSync('indexdata', res.data.message, )

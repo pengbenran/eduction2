@@ -1,53 +1,42 @@
-<!--pages/active/active.wxml-->
-<!-- <view class='formwarp'>
-<view class='foromr'>
-<icon type="search" size="20" color='#fff'/>  <input type='text' bindblur='inputTap' placeholder='学生查询'placeholder-style='color:#fff;'></input>
-</view> 
-   <text bindtap='sousuo'>搜索</text>
-</view>  -->
+
 <view class="container">
-  <!-- <scroll-view class="swiper-tab" scroll-x='true'>   
-    <view wx:for="{{tabitem}}" class="swiperlist {{item.isSelect==true ? 'active' : ''}}" bindtap='change'
-    data-typeid='{{item.typeId}}' data-index="{{index}}">
-      {{item.name}}
-    </view>
-  </scroll-view>
-  <view class='studentConent'>
-    <view class='studentlist' wx:for="{{students}}" :key="key" :index="index">
-      <view class='studentImg'>
-        <image src='{{item.studentimg}}'></image>
-      </view>
-      <view>{{item.name}}</view>
-      <view class='buyclass'>{{item.buyclass}}</view>
-    </view>   -->
+
+    <form bindsubmit="formSubmit" >
     <view class='left'>
         <view class="leftlist" >
-            <text class="section">您的姓名:</text>          
-            <input  placeholder="请输入正确的姓名" class='inp'/>                
+            <text class="section" >您的姓名:</text>          
+            <input name='UserName'  placeholder="请输入正确的姓名" class='inp'/>                
         </view>
          <view class="leftlist" >
             <text class="section">联系电话:</text>          
-            <input  placeholder="请输入正确的联系方式" class='inp'/>                
+            <input name='UserPhone' maxlength='11' placeholder="请输入正确的联系方式" class='inp'/>                
         </view>
          <view class="leftlist" >
             <text class="section">微信账号:</text>          
-            <input  placeholder="请输入微信号" class='inp'/>                
+            <input  name='UserWx' placeholder="请输入微信号" class='inp'/>                
         </view>
          <view class="leftlist" >
             <text class="section">年级专业:</text>          
-            <input   placeholder="请填写年级及专业" class='inp'/>                
+            <input name='UserJob'  placeholder="请填写年级及专业" class='inp'/>                
         </view>
          <view class="leftlist" >
             <text class="section">预约类别:</text>          
-            <input   placeholder="请选择您需要的类别" class='inp'/>                
+            <picker bindchange="bindPickerChange" value="{{name}}" range="{{GoodCatAll}}">
+              <view class="picker">
+                <text>{{name}}</text>
+              </view>
+            </picker>               
+
         </view>
     </view>
     <view class='tijiaowrap'>
       <view class='tijiao'>
           <button formType="submit">提交</button>
       </view>
-    </view>             
+    </view>     
+    </form>        
 </view>
+
 
 
 

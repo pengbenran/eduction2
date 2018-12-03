@@ -22,3 +22,6 @@ input{
     background-color: transparent;
     z-index: 1;
 }
+.fontHidden1{
+  white-space:normal;overflow: hidden;display: -webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;
+}
