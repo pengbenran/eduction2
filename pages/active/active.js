@@ -6,11 +6,12 @@ const request = require('../../utils/request.js')
 // var apis = getApp().globalData.apis;
 //获取应用实例
 var app = getApp()
+
 Page({
   //页面的初始化数据
   data: {
-    tabitem:[],
-    typeid:0
+   tabitem:[],
+   typeid:0
   },
   onShareAppMessage: function () {
   },
@@ -60,9 +61,8 @@ Page({
       console.log(that.data.students)
     })
   },
-
   change:function(e){
-    var that=this;
+    var that=this;2
     let typeid = e.currentTarget.dataset.typeid;
     console.log('查看选中ID', e.currentTarget, that.data.tabitem)
     that.setData({

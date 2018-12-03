@@ -72,23 +72,23 @@
       <image src="{{myping}}" class="integral-image"></image>
     </view>
     <view class="integral-right int-borde">
-      <text>团购</text>
+      <text>拼团</text>
         <view class="inte-rightimg">
           <image src="{{inteping}}"></image>
         </view>
     </view>
   </view>
-  <view class="integral" bindtap='xianshi'>
+  <!-- <view class="integral" bindtap='xianshi'>
     <view class="integral-left">
       <image src="{{limittime}}" class="integral-image"></image>
     </view>
     <view class="integral-right int-borde">
-      <text>限时折扣</text>
+      <text>我的预约</text>
         <view class="inte-rightimg">
           <image src="{{inteping}}"></image>
         </view>
     </view>
-  </view>
+  </view> -->
   <view class="log">
     <image src="https://shop.guqinet.com/html/images/pos/logo.png" alt=""/>
   </view>

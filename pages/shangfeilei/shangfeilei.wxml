@@ -1,18 +1,15 @@
-<view class="container">
-  <!-- 头部 -->
-  <view class='classlist' wx:for="{{Goods}}" :key="key" :index="index">
-    <view class='left'  bindtap='jumpclassDetail' data-goodId="{{item.goodsId}}">
-      <image src='{{item.thumbnail}}'></image>
-    </view>
-    <view class='right'>
-      <view class='classtitile'  bindtap='jumpclassDetail' data-goodId="{{item.goodsId}}">
-        {{item.name}}
-      </view>
-      <view class='price'>￥{{item.price}}</view>
-      <view class='rightBottom'> 
-        <text class='haspay'>已有{{item.buyCount}}人购买</text>
-        <text class='buybtn' bindtap='jumpbuy' data-price="{{item.price}}" data-goodsId="{{item.goodsId}}"data-image="{{item.thumbnail}}">报名</text>
-      </view>
-    </view>
-  </view> 
+<view class="container"> 
+   <view class='left'>
+      <view class='leftlist'  bindtap='ClicktapName'  wx:for="{{array}}" wx:key="key" data-catid="{{item.catId}}" data-index='{{index}}' style='background:{{item.bgColor}}'>
+         <text class='txt' style="color:{{item.viewColor}};">{{item.name}}</text>       
+      </view>   
+   </view>
+   <view class='right'>
+      <view>
+         <view class='rightlist'bindtap='ClicktapName' wx:for="{{array1}}" wx:key="key">
+            <image src='{{item.thumbnail}}' catchtap="chooseImageTap" data-index="{{index}}"style=' border-radius: 8%; '></image>
+            <text style='font-size:32rpx;'>{{item.name}}</text>
+         </view>    
+      </view>   
+   </view>    
 </view>

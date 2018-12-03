@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
-	"appid": "wx5b9727c2858b9989",
+	"appid": "wxc791abdf88ec2b85",
 	"projectname": "%E6%95%99%E8%82%B2%E5%9F%B9%E8%AE%AD",
 	"isGameTourist": false,
 	"condition": {
@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -38,6 +38,47 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": "1022"
+				},
+				{
+					"id": 1,
+					"name": "active",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shangfeilei",
+					"pathName": "pages/shangfeilei/shangfeilei",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "active",
+					"pathName": "pages/active/active",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "active",
+					"pathName": "pages/active/active",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "active",
+					"pathName": "pages/active/active"
 				}
 			]
 		}

@@ -426,10 +426,11 @@ margin: 0 auto;
 }
 
 .title{
-  width: 208rpx;
-  height: 50rpx;
+  width:200rpx;
+  height:48rpx;
   overflow: hidden;
   margin: 20rpx auto;
+
 }
 .title image{
   width: 100%;

@@ -2,55 +2,51 @@ var apimg = getApp().globalData.apimg;
 var api = getApp().globalData.api;
 const request = require('../../utils/request.js')
 Page({
-  data: {
-    Goods:[]
-  },
-
+  data: {   
+    array:[],  
+    array1:[],
+    GoodLists:[ ],
+    },
   // 刷新
-
-  onShareAppMessage: function () {
+  onShareAppMessage: function (){
     withShareTicket: true
   },
   onLoad: function (options) {
     var that=this;
     request.moregets('/api/Goods/GoodCatAll').then(function (res) {
+      console.log(res)
+      let arr = []
+      res.Goods.map(v=>{
+        if (v.catId == res.GoodCatAll[0].catId){
+          arr.push(v)
+        }
+      })
       that.setData({
-        Goods: res.Goods
+        GoodLists: res.Goods,
+        array: res.GoodCatAll,
+        array1: arr
       })
     })
   },
-  jumpclassDetail:function(e){
-    wx.navigateTo({ url: '../group/group?goodid=' + e.currentTarget.dataset.goodid + '&catid=2' });
+  
+  ClicktapName(e){
+   let that = this;
+   let arr = []
+    let cartid = e.currentTarget.dataset.catid
+    // arr =  that.data.GoodLists.filter(f=>{
+    //   f.catId == 81
+    // })
+    that.data.GoodLists.map(v=>{
+      if (v.catId == cartid){
+        arr.push(v)
+      }
+    })
+    console.log(cartid, arr)
+    that.setData({
+      array1: arr,
+    })
   },
-  jumpbuy:function(e){
-    console.log(e)
-    if (wx.getStorageSync('memberId') == "00") {
-      wx.showModal({
-        title: '提示',
-        content: '你还未登录，是否登录',
-        success: function (res) {
-          if (res.confirm) {
-            wx.switchTab({
-              url: '../my/my',
-            })
-          } else if (res.cancel) {
-            that.hModal()
-          }
-        }
-      })
-    }
-    else {
-      var goodarr = []
-      var goodlist = {}
-      goodlist.pic = 1
-      goodlist.num = 1;
-      goodlist.price = e.currentTarget.dataset.price;
-      goodlist.image = e.currentTarget.dataset.image;
-      goodlist.goodsId = e.currentTarget.dataset.goodsid;
-      goodarr[0] = goodlist
-      wx.navigateTo({
-        url: "../dingdan/dingdan?goodlist=" + JSON.stringify(goodarr) + '&cart=0'
-      })
-    }
+  chooseImageTap:function(){
+
   }
-})
+}) 

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/shangfeilei/shangfeilei",
+    "pages/index/index",
+    
     "pages/my/my",
     "pages/active/active",
     "pages/jiazhang/jiazhang",
@@ -86,11 +87,12 @@
     "navigationBarTitleText": "WeChat",
     "enablePullDownRefresh": true,
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#515151"
+     "backgroundColor": "#515151"
+   
   },
   "tabBar": {
-    "color": "#b3b3b3",
-    "selectedColor": "#3494ff",
+    "color": "#767674",
+    "selectedColor": "#417df7",
     "backgroundColor": "#ffffff",
     "borderStyle": "#d9d9d9",
     "list": [
@@ -104,20 +106,14 @@
         "selectedIconPath": "/image/all01.png",
         "iconPath": "/image/all.png",
         "pagePath": "pages/shangfeilei/shangfeilei",
-        "text": "课程"
+        "text": "课程分类"
       },
       {
         "selectedIconPath": "/image/active01.png",
         "iconPath": "/image/active.png",
         "pagePath": "pages/active/active",
-        "text": "学生风采"
-      },
-        {
-          "selectedIconPath": "/image/fenga.png",
-          "iconPath": "/image/feng.png",
-          "pagePath": "pages/jiazhang/jiazhang",
-          "text": "亲子活动"
-        },
+        "text": "预约试听"
+      },     
       {
          "selectedIconPath": "/image/wode01.png",
          "iconPath": "/image/wode.png",

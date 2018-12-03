@@ -2,12 +2,12 @@
 <view class="container">
   <!-- 搜索  -->
   <!-- <official-account>我问问</official-account> -->
-  <view class='searchTop' bindtap='sousuo'>
+  <!-- <view class='searchTop' bindtap='sousuo'>
     <view class="m-searchTop">
-      <view class="icon-search"></view>
+      <view class="icon-search"></view>              
       <view class="input">搜索课程</view>
     </view>
-  </view>
+  </view> -->
   <!-- <view><image src="{{userImageBase64}}"></image></view> -->
   <!-- 搜索底、公告 -->
   <!-- <view class='Announcement' bindtap='gao'> -->
@@ -32,7 +32,7 @@
     <swiper class="swiper_box" indicator-color='gray' indicator-active-color='#fff' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="5000" duration="{{duration}}" bindtap="swiperbind">
       <view wx:for="{{data.imgurl}}">
         <swiper-item>
-          <image src="{{item.imageUrl}}" />
+          <image src="{{item.imageUrl}}"></image>
         </swiper-item>
       </view>
     </swiper>
@@ -51,16 +51,16 @@
   <view class='title' wx:if="{{pingtuanList.length!=0}}">
     <image src='/image/jiaochen.png'></image>
   </view>
-  <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='true' muted="{{isAuto}}"></video>
- <view class='title' wx:if="{{pingtuanList.length!=0}}">
+  <!-- <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='false' muted="{{isAuto}}"></video> -->
+
+ <!-- <view class='title' wx:if="{{pingtuanList.length!=0}}">
     <image src='/image/xuexiao.png'></image>
-  </view>
+  </view> -->
   <view class='schoolLogo' bindtap='schooldetail'>
     <image src='{{message.logo}}'></image>
   </view>
 
-
-
+  
   <view class='title' wx:if="{{pingtuanList.length!=0}}">
     <image src='/image/pingtuan.png'></image>
   </view>
@@ -80,9 +80,9 @@
   </scroll-view>
 
   <!-- 限时折扣 -->
-  <view class='title' wx:if="{{apiLimit.length!=0}}">
+  <!-- <view class='title' wx:if="{{apiLimit.length!=0}}">
     <image src='/image/xianshi.png'></image>
-  </view>
+  </view>. -->
   <!-- 横向滚动 -->
   <scroll-view scroll-x='true' class="sc">
     <view class="one" wx:for="{{apiLimit}}" bindtap='jumplimit'  data-item="{{item.limitGoodsId}}" id="{{index}}" data-apiLimit="{{item.perTotal}}">
@@ -111,10 +111,18 @@
                         <text class='money'>￥{{item.price}}</text> 
                         <!-- <image src='{{jiahao}}' style='height:50rpx;width:50rpx;float:right'></image>                        -->
                       </view>  
-              </view>
+              </view>           
           </view>
         </view>
     </view>
+        <view class='title'>
+            <image src='/image/shipin.png'></image>
+        </view> 
+         <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='false' muted="{             {isAuto}}">
+         </video>
+          <video src="{{indexmv.imageUrl}}" style='width:100%' autoplay='false' muted="{             {isAuto}}">
+         </video>
+
     <!-- 了解更多 -->
   </block>
 </view>

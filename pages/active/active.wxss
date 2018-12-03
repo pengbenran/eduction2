@@ -1,4 +1,8 @@
-.swiper-tab{
+page{
+  background-color: #f8f7fc;
+}
+
+/* .swiper-tab{
   text-align: center;
   white-space: nowrap;
   background: #fff;
@@ -44,13 +48,64 @@ image{
   margin-left: 20rpx;
   margin-bottom: 20rpx;
 }
-.cart-no-data {
-padding:40rpx 0;
-color:#999;
-text-align:center;
-width: 100%;
+ */
+
+.container{
+  display: flex;
+  flex-direction:column;
 }
-.buyclass{
+.left{ 
+  margin-top: 20rpx;
+  background: #fff;
+}
+.leftlist{
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx 0;
+  border-bottom: 2rpx #ccc solid;
+}
+.leftlist .section{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  width: 25%;
+}
+.leftlist .inp{
+  font-size: 28rpx;
+   width: 75%;
+}
+
+.tijiaowrap{
+  width: 100%;
+  display: inline-block;
+  padding-top: 60rpx;
+}
+.tijiao button{
+   width: 70%;
+   height: 100rpx;
+   text-align: center;
+   line-height: 100rpx;
+   color: #fff;
+   background-color: #3494ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .buyclass{
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
@@ -63,4 +118,4 @@ width: 100%;
 
 .formwarp{display: flex;justify-content: content;}
 .formwarp text{width: 15%;font-size: 32rpx;display: inline-block;background:#3494ff;color: #FFF;text-align: center;
-line-height:84rpx; }
+line-height:84rpx; } */

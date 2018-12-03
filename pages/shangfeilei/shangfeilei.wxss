@@ -1,13 +1,50 @@
+
 .left{
-  width: 250rpx;
-  height: 250rpx;
- overflow: hidden;
+  background: #fff;
+  width:22%;
+  margin-top: 20rpx;
+  line-height: 86rpx;
+  text-align: center;
+  float: left;
+  
 }
-image{
-  width: 100%;
-  height: 100%;
-  display: block;
+.right{
+  background: #fff;
+  width:78%;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  /* border: 2rpx solid #ff0000; */
+  float: right;
+  padding-left: 6rpx;  
 }
+.rightlist{
+  padding-left: 20rpx;
+  width:168rpx;
+  float: left; 
+}
+.rightlist image{
+   width:168rpx;
+  height: 170rpx; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .classlist{
   border: 1rpx solid #ddd;
   width: 95%;
